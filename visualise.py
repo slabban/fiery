@@ -31,7 +31,7 @@ def plot_prediction(image, output, cfg):
     vis_image = plot_instance_map(consistent_instance_seg[0, 0].cpu().numpy(), instance_map)
     trajectory_img = np.zeros(vis_image.shape, dtype=np.uint8)
     for instance_id in unique_ids:
-        path = matched_centers[instance_id]
+        path = matched_centers[instance_id].astype(np.int32)
         for t in range(len(path) - 1):
             color = instance_colours[instance_id].tolist()
             cv2.line(trajectory_img, tuple(path[t]), tuple(path[t + 1]),

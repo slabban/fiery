@@ -5,7 +5,7 @@ import matplotlib.pylab
 from fiery.utils.instance import predict_instance_segmentation_and_trajectories
 
 DEFAULT_COLORMAP = matplotlib.pylab.cm.jet
-
+matplotlib.use('Agg')
 
 def flow_to_image(flow: np.ndarray, autoscale: bool = False) -> np.ndarray:
     """

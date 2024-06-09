@@ -35,8 +35,8 @@ _C.TAG = 'default'
 
 _C.GPUS = [0]  # gpus to use
 _C.PRECISION = 32  # 16bit or 32bit
-_C.BATCHSIZE = 3
-_C.EPOCHS = 20
+_C.BATCHSIZE = 1
+_C.EPOCHS = 5
 
 _C.N_WORKERS = 5
 _C.VIS_INTERVAL = 5000
@@ -47,7 +47,7 @@ _C.PRETRAINED.LOAD_WEIGHTS = False
 _C.PRETRAINED.PATH = ''
 
 _C.DATASET = CN()
-_C.DATASET.DATAROOT = './nuscenes/'
+_C.DATASET.DATAROOT = './.nuscenes/nuscenes/'
 _C.DATASET.VERSION = 'trainval'
 _C.DATASET.NAME = 'nuscenes'
 _C.DATASET.IGNORE_INDEX = 255  # Ignore index when creating flow/offset labels
@@ -74,7 +74,7 @@ _C.MODEL = CN()
 
 _C.MODEL.ENCODER = CN()
 _C.MODEL.ENCODER.DOWNSAMPLE = 8
-_C.MODEL.ENCODER.NAME = 'efficientnet-b4'
+_C.MODEL.ENCODER.NAME = 'efficientnet-b0'
 _C.MODEL.ENCODER.OUT_CHANNELS = 64
 _C.MODEL.ENCODER.USE_DEPTH_DISTRIBUTION = True
 
